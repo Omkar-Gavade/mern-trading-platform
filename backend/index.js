@@ -15,8 +15,17 @@ const uri = process.env.MONGO_URL;
 
 const app = express();
 
-app.use(cors());
+// app.use(cors());
+app.use(cors({
+  origin: "*",
+  methods: ["GET", "POST", "PUT", "DELETE"],
+}));
 app.use(bodyParser.json());
+
+app.get("/", (req, res) => {
+  res.send("Backend is running");
+});
+
 
 // app.get("/addHoldings", async(req,res)=>{
 //     let tempHoldings = [
@@ -272,8 +281,14 @@ app.get("/holdings", async (req, res) => {
   }
 });
 
-app.listen(PORT, () =>{
-    console.log("app started");
-    mongoose.connect(uri);
+mongoose.connect(uri)
+  .then(() => {
     console.log("DB connected");
-});
+
+    app.listen(PORT, () => {
+      console.log("Server running on port", PORT);
+    });
+  })
+  .catch(err => {
+    console.error("DB connection failed:", err);
+  });
