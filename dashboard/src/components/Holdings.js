@@ -9,8 +9,9 @@ const Holdings = () => {
   const { refreshHoldings } = useContext(GeneralContext);
 
   useEffect(() => {
-    axios.get("http://localhost:3002/holdings").then((res) => {
-      // console.log(res.data);
+    // axios.get("http://localhost:3002/holdings")
+    axios.get("https://mern-trading-platform-g2v4.onrender.com/holdings").then((res) => {
+    console.log(res.data);
       setAllHoldings(res.data);
     });
   }, [refreshHoldings]); // <--- re-fetch whenever BUY/SELL triggers refresh

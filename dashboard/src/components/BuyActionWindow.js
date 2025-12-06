@@ -29,7 +29,10 @@ const BuyActionWindow = ({ uid }) => {
         mode: "BUY",
       };
 
-      const resp = await axios.post("http://localhost:3002/newOrder", payload);
+      // const resp = await axios.post("http://localhost:3002/newOrder", payload);
+      // console.log("BUY response:", resp.data);
+
+      const resp = await axios.post("https://mern-trading-platform-g2v4.onrender.com/newOrder", payload);
       console.log("BUY response:", resp.data);
 
       // refresh holdings UI and close modal

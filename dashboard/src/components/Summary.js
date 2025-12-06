@@ -8,7 +8,8 @@ const Summary = () => {
   const { refreshHoldings } = useContext(GeneralContext);
 
   useEffect(() => {
-    axios.get("http://localhost:3002/holdings").then((res) => {
+    // axios.get("http://localhost:3002/holdings")
+    axios.get("https://mern-trading-platform-g2v4.onrender.com/holdings").then((res) => {
       setHoldings(res.data);
     });
   }, [refreshHoldings]);

@@ -15,12 +15,6 @@ const uri = process.env.MONGO_URL;
 
 const app = express();
 
-app.use(cors({
-  origin: ["http://localhost:3000", "https://auth-feature.dr6xx1im5efws.amplifyapp.com/"],
-  credentials: true,
-  methods: "GET,POST,PUT,DELETE"
-}));
-
 app.use(cors());
 app.use(bodyParser.json());
 

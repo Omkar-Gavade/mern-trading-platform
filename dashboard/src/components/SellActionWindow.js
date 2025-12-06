@@ -16,7 +16,8 @@ const SellActionWindow = ({ uid }) => {
 
     try {
       // verify holding exists & qty by asking the backend
-      const holdingsRes = await axios.get("http://localhost:3002/holdings");
+      const holdingsRes = await axios.get("https://mern-trading-platform-g2v4.onrender.com/holdings");
+      // axios.get("http://localhost:3002/holdings");
       const holdings = holdingsRes.data || [];
       const existing = holdings.find((h) => h.name === uid);
 
@@ -40,7 +41,8 @@ const SellActionWindow = ({ uid }) => {
         mode: "SELL",
       };
 
-      const resp = await axios.post("http://localhost:3002/newOrder", payload);
+      const resp = await axios.post("https://mern-trading-platform-g2v4.onrender.com/newOrder", payload)
+      // axios.post("http://localhost:3002/newOrder", payload);
       console.log("SELL response:", resp.data);
 
       // refresh holdings and close modal
