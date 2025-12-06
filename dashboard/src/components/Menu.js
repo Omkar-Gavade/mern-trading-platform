@@ -15,10 +15,10 @@ const Menu = () => {
     setIsProfileDropdownOpen(!isProfileDropdownOpen);
   };
 
-//   const handleProfileClick = () => {
-//   console.log("Clicked!");
-//   setIsProfileDropdownOpen(!isProfileDropdownOpen);
-// };
+  //   const handleProfileClick = () => {
+  //   console.log("Clicked!");
+  //   setIsProfileDropdownOpen(!isProfileDropdownOpen);
+  // };
 
 
 
@@ -108,7 +108,17 @@ const Menu = () => {
             <h4>Omkar Gavade</h4>
             <p className="userid">ZU123456</p>
 
-            <div className="logout-btn">Logout</div>
+            <div
+              className="logout-btn"
+              style={{ cursor: "pointer" }}
+              onClick={() => {
+                console.log("Logout clicked"); // debug
+                localStorage.removeItem("zerodha_user");
+                window.location.assign("https://main.d42kfpl180y9i.amplifyapp.com/about/");
+              }}
+            >
+              Logout
+            </div>
           </div>
         )}
 
