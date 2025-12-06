@@ -1,0 +1,63 @@
+/* Dropdown container */
+.profile-dropdown {
+  position: absolute;
+  right: 0;
+  top: 55px; /* Adjust based on your design */
+  background: #fff;
+  width: 200px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+  padding: 16px;
+  z-index: 9999; /* IMPORTANT */
+  animation: slideDown 0.2s ease-out;
+}
+
+/* Smooth slide animation */
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Name */
+.profile-dropdown h4 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+}
+
+/* User ID */
+.profile-dropdown .userid {
+  margin-top: 4px;
+  font-size: 0.85rem;
+  color: #888;
+  margin-bottom: 18px;
+}
+
+/* Logout Button (Kite theme) */
+.logout-btn {
+  width: 100%;
+  background: #f44336;
+  padding: 10px 0;
+  text-align: center;
+  color: white;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.logout-btn:hover {
+  background: #d32f2f;
+}
+.menus {
+  position: relative;
+}
+
+.profile {
+  position: relative;
+  cursor: pointer;
+  z-index: 20;
+}
