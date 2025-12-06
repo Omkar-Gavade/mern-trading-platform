@@ -114,7 +114,7 @@ const Menu = () => {
               onClick={() => {
                 console.log("Logout clicked"); // debug
                 localStorage.removeItem("zerodha_user");
-                window.location.assign("https://main.d42kfpl180y9i.amplifyapp.com/about/");
+                window.location.assign("https://auth-feature.d42kfpl180y9i.amplifyapp.com/");
               }}
             >
               Logout
