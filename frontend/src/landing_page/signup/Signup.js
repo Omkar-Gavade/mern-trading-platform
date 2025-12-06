@@ -43,7 +43,7 @@ function Signup() {
     localStorage.setItem("zerodha_user", JSON.stringify(user));
 
     // Redirect to Dashboard
-    window.location.href = "https://auth-feature.d39a5t6mqh4mia.amplifyapp.com/";
+    window.location.href = "https://auth-feature.d3msc2wc6l5yao.amplifyapp.com/";         // Enter the dashboard deployed link
   };
 
   return (
